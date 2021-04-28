@@ -12,9 +12,12 @@ console.log(giocataUtente);
 if (giocataPC < giocataUtente || giocataPC > giocataUtente) {
     if (giocataPC < giocataUtente) {
         console.log("Hai vinto!!!");
+        document.getElementById("giocata").innerHTML = '<p class="win"> Hai vinto!!! ' + giocataUtente + " a " + giocataPC + '</p>';
     } else {
         console.log("Ha vinto il PC!");
+        document.getElementById("giocata").innerHTML = '<p class="lost"> Ha vinto il PC! ' + giocataUtente + " a " + giocataPC + '</p>';
     }
 } else {
     console.log("Pareggio!");
+    document.getElementById("giocata").innerHTML = '<p class="draw"> Pareggio! ' + giocataUtente + " a " + giocataPC + '</p>';
 }
