@@ -6,22 +6,18 @@ stampa un messaggio appropriato sull'esito del controllo. */
 var mailUtente = prompt("Controllo accesso, scrivi il tuo indirizzo mail");
 var mailValide = ["pippo@boolean.careers", "pluto@boolean.careers", "paperino@boolean.careers"];
 
-var accesso = false;
+// var accesso = false;
 
 mailValide.push("mario.rossi@boolean.careers");
 
-// debug
-console.log("accesso pre ciclo" , accesso);
-
-for (i = 0; i < mailValide.length; i++) { //controllo corrispondenza mail utente con array
+/*for (i = 0; i < mailValide.length; i++) { //controllo corrispondenza mail utente con array
     if (mailValide[i] == mailUtente) {
         accesso = true; //cambio il valore della variabile se la mail è presente
         i = mailValide.length; //esco dal ciclo se trovo la corrispondenza esatta
     } 
-};
+};*/
 
-// debug
-console.log("accesso post ciclo" , accesso);
+var accesso = mailValide.includes(mailUtente);
 
 if (accesso == true) {
     console.log(mailUtente , "è tra gli indirizzi validi, accesso in corso...");
