@@ -13,7 +13,7 @@ mailValide.push("mario.rossi@boolean.careers");
 for (i = 0; i < mailValide.length; i++) { //controllo corrispondenza mail utente con array
     if (mailValide[i] == mailUtente) {
         accesso = true; //cambio il valore della variabile se la mail è presente
-        i = mailValide.length; //esco dal ciclo se trovo la corrispondenza esatta
+        break; //esco dal ciclo se trovo la corrispondenza esatta
     } 
 };
 
