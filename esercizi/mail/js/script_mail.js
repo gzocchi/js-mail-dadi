@@ -21,6 +21,8 @@ var accesso = mailValide.includes(mailUtente);
 
 if (accesso == true) {
     console.log(mailUtente , "è tra gli indirizzi validi, accesso in corso...");
+    document.getElementById("validazione_mail").innerHTML = '<p class="green">' + mailUtente + " è tra gli indirizzi validi, accesso in corso...</p>";
 } else {
     console.log(mailUtente , "non è tra gli indirizzi mail validi, accesso negato!");
+    document.getElementById("validazione_mail").innerHTML = '<p class="red">' + mailUtente + " non è un indirizzo mail valido, accesso negato!</p>";
 };
