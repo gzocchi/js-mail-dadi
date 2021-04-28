@@ -21,3 +21,42 @@ if (giocataPC < giocataUtente || giocataPC > giocataUtente) {
     console.log("Pareggio!");
     document.getElementById("giocata").innerHTML = '<p class="draw"> Pareggio! ' + giocataUtente + " a " + giocataPC + '</p>';
 }
+
+// al meglio dei 5
+var puntiPC = 0;
+var puntiUtente = 0;
+
+//debug
+// console.log("primo debug punti PC/Utente:",puntiPC,puntiUtente);
+
+for (i = 0; i < 5; i++) {
+    var pc = Math.floor(Math.random() * 6) + 1;
+    var utente = Math.floor(Math.random() * 6) + 1;
+
+    //debug
+    // console.log("debug lancio n°",i+1,pc,utente);
+
+    if (pc < utente || pc > utente) {
+        if (pc < utente) {
+            console.log("Hai vinto!!!");
+            puntiUtente++;
+        } else {
+            console.log("Ha vinto il PC!");
+            puntiPC++;
+        }
+    } else {
+        console.log("Pareggio! Ritenta");
+        i--;
+    }
+};
+
+//debug
+// console.log("secondo debug punti PC/Utente:",puntiPC,puntiUtente);
+
+if (puntiUtente > puntiPC) {
+    console.log("Hai vinto!!!");
+    document.getElementById("giocata5").innerHTML = '<p class="win">Complimenti! Hai vinto ' + puntiUtente + ' partite su 5!</p>';
+} else {
+    console.log("Ha vinto il PC!");
+    document.getElementById("giocata5").innerHTML = '<p class="lost">Il PC ha vinto! ' + puntiPC + ' partite su 5 giocate</p>';
+};
